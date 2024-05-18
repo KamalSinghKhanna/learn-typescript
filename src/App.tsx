@@ -1,17 +1,30 @@
 
 const App = () => {
-  const arr: number[] = [1,2,93,12,65,0]
-  const MaxValue = (arr: number[]) : number => {
-    let max = arr[0];
-    arr.forEach((ele)=> {
-      if(ele>max){
-        max = ele;
-      }
-    })
-    return max;
+ interface User {
+   firstName: string;
+   lastName: string;
+   age: number;
+ }
+const list: User[] = [
+  {
+    firstName: "harkirat",
+    lastName: "Singh",
+    age: 21,
+  },
+  {
+    firstName: "Raman",
+    lastName: "Singh",
+    age: 16,
+  },
+];
+  
+  const isLegal = (list: User[]) =>{
+   return list.filter((item) => item.age > 18);
   }
 
-  console.log(MaxValue(arr))
+
+  console.log(isLegal(list))
+
   return (
     <div>App</div>
   )
