@@ -1,30 +1,18 @@
 
 const App = () => {
- interface User {
-   firstName: string;
-   lastName: string;
-   age: number;
+ enum Direction {
+    Up = "UP",
+    Down = "Down",
+    Left = "Left",
+    Right = 'Right'
  }
-const list: User[] = [
-  {
-    firstName: "harkirat",
-    lastName: "Singh",
-    age: 21,
-  },
-  {
-    firstName: "Raman",
-    lastName: "Singh",
-    age: 16,
-  },
-];
-  
-  const isLegal = (list: User[]) =>{
-   return list.filter((item) => item.age > 18);
-  }
 
+ function doSomething(keyPressed: Direction) {
+   // do something.
+   console.log(keyPressed)
+ }
 
-  console.log(isLegal(list))
-
+ doSomething(Direction.Left);
   return (
     <div>App</div>
   )
