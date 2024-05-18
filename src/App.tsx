@@ -1,32 +1,34 @@
 
 const App = () => {
-  interface Person {
+
+  type StringOrNumber = string | number //unions
+  function getUser(id: StringOrNumber){
+    console.log(id)
+  }
+  getUser(134)
+
+  type Employee = {
     name: string;
-    age: number;
-    greet(phrase: string): void;
+    startDate: Date;
+  }
+  type Manager = {
+    name: string;
+    department: string;
   }
 
-  class Employee implements Person {
-    name: string;
-    age: number;
+type TeamLead = Employee & Manager;
 
-    constructor(n: string, a: number) {
-      this.name = n;
-      this.age = a;
-    }
-
-    greet(phrase: string) {
-      console.log(`${phrase} ${this.name}`);
-    }
+  const teamLead : TeamLead = {
+    name: "kamal",
+    startDate: new Date(),
+    department: "Software Developer"
   }
-  // Creating an Employee object
-  const employee = new Employee("John", 30);
 
-  // Accessing properties and calling method
-  console.log(employee.name); // Output: John
-  console.log(employee.age); // Output: 30
-  employee.greet("Hello"); // Output: Hello John
-  return <div>App</div>;
+  console.log(teamLead.name)
+
+  return (
+    <div>App</div>
+  )
 }
 
 export default App
