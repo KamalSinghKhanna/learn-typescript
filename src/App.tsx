@@ -1,31 +1,17 @@
 
 const App = () => {
-
-  type StringOrNumber = string | number //unions
-  function getUser(id: StringOrNumber){
-    console.log(id)
-  }
-  getUser(134)
-
-  type Employee = {
-    name: string;
-    startDate: Date;
-  }
-  type Manager = {
-    name: string;
-    department: string;
+  const arr: number[] = [1,2,93,12,65,0]
+  const MaxValue = (arr: number[]) : number => {
+    let max = arr[0];
+    arr.forEach((ele)=> {
+      if(ele>max){
+        max = ele;
+      }
+    })
+    return max;
   }
 
-type TeamLead = Employee & Manager;
-
-  const teamLead : TeamLead = {
-    name: "kamal",
-    startDate: new Date(),
-    department: "Software Developer"
-  }
-
-  console.log(teamLead.name)
-
+  console.log(MaxValue(arr))
   return (
     <div>App</div>
   )
